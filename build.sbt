@@ -48,7 +48,7 @@ lazy val root = project in file(".") enablePlugins(PlayJava) configs(ITest) sett
 lazy val ITest = config("it") extend(Test)
 
 //scalaVersion := "2.11.8"
-scalaVersion := "2.13.13"
+scalaVersion := "2.13.14"
 //dependencyOverrides += "com.typesafe.play" % "scalaVersion" % "2.13.13"
 //crossScalaVersions := Seq("2.13.13")
 //scalacOptions ++= List("-encoding", "utf8", "-deprecation", "-feature", "-unchecked")
@@ -111,30 +111,32 @@ libraryDependencies ++= Seq(
 //  "com.google.inject" % "guice" % "4.2.3",
   "com.amazonaws" % "aws-java-sdk" % "1.11.46",
   "commons-io" % "commons-io" % "2.4",
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.13.5",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.5",
-  "com.fasterxml.jackson.core" % "jackson-annotations" % "2.13.5",
-  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-csv" % "2.13.5",
+  //"com.fasterxml.jackson.core" % "jackson-core" % "2.13.5",
+  //"com.fasterxml.jackson.core" % "jackson-databind" % "2.13.5",
+  //"com.fasterxml.jackson.core" % "jackson-annotations" % "2.13.5",
+  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-csv" % "2.14.3",
 //  "com.typesafe.akka" % "akka-testkit_2.11" % "2.4.17" % "test",
 //  "com.typesafe.akka" % "akka-testkit_2.13" % "2.6.21" % "test",
   javaWs,
 //  cache,
 //  "net.sf.ehcache" % "ehcache" % "2.10.9.2",
-  "com.typesafe.play" %% "play-cache" % "2.8.16",
+  //"com.typesafe.play" %% "play-cache" % "2.8.16",
   filters,
   "org.mockito" % "mockito-core" % "2.8.9",
   "com.couchbase.client" % "java-client" % "3.3.1",
   "org.mindrot" % "jbcrypt" % "0.3m",
-  "com.typesafe.play" % "play-mailer_2.13" % "7.0.2",
+  //"com.typesafe.play" % "play-mailer_2.13" % "7.0.2",
+  "com.typesafe.play" %% "play-mailer" % "9.0.0",
+  "com.typesafe.play" %% "play-mailer-guice" % "9.0.0",
   "io.vavr" % "vavr" % "0.9.0",
   "io.vavr" % "vavr-jackson" % "0.9.0",
   "io.vavr" % "vavr-match" % "0.9.0",
   "com.google.code.gson" % "gson" % "2.8.1" % "it",
   "junit" % "junit" % "4.12" % "it",
 //  "com.typesafe.play" % "play-test_2.13" % "2.5.14" % "it",
-  "com.typesafe.play" % "play_2.13" % "2.8.16" % "it",
+  //"com.typesafe.play" % "play_2.13" % "2.8.16" % "it",
   "io.reactivex" % "rxjava" % "1.3.0" % "it",
-  "com.fasterxml.jackson.dataformat" % "jackson-dataformat-csv" % "2.9.0",
+  //"com.fasterxml.jackson.dataformat" % "jackson-dataformat-csv" % "2.9.0",
   "io.vavr" % "vavr-match" % "0.9.0",
   "org.pac4j" % "play-pac4j" % playPac4jVersion,
   "org.pac4j" % "pac4j-oidc" % pac4jVersion exclude("commons-io" , "commons-io"),
@@ -181,7 +183,7 @@ Test / javaOptions ++= Seq(
 //libraryDependencies += "org.playframework" %% "play-cache" % "3.0.0"
 libraryDependencies += guice
 libraryDependencies += caffeine
-dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.5"
+//dependencyOverrides += "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.5"
 //val playVersionPlayTest = play.core.PlayVersion.current
 //val TestDeps = Seq(
 //  "org.playframework"       %% "play-test"           % playVersionPlayTest     % Test
